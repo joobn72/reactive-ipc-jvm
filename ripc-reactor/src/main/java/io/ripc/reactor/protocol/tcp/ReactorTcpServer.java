@@ -5,7 +5,6 @@ import io.ripc.protocol.tcp.TcpHandler;
 import io.ripc.protocol.tcp.TcpServer;
 import org.reactivestreams.Publisher;
 import reactor.Environment;
-import reactor.fn.Function;
 
 /**
  * Created by jbrisbin on 5/28/15.
@@ -23,7 +22,6 @@ public class ReactorTcpServer<R, W> {
     }
 
     public ReactorTcpServer<R, W> start(ReactorTcpHandler<R, W> handler) {
-
         transport.startAndAwait(new TcpHandler<R, W>() {
             @Override
             public Publisher<Void> handle(TcpConnection<R, W> connection) {

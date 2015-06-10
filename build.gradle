@@ -149,9 +149,9 @@ project('ripc-reactor-examples') {
   description = 'Reactor Reactive IPC Composition Layer examples'
 
   dependencies {
-    // ripc-tcp
     compile project(":ripc-reactor"),
-        project(":ripc-transport-netty4")
+        project(":ripc-transport-netty4"),
+        "com.fasterxml.jackson.core:jackson-databind:2.5.4"
 
     runtime "ch.qos.logback:logback-classic:$logbackVersion"
   }
